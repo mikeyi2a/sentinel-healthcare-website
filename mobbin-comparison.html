@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel — Mobbin Section Comparison</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #181b21;
+    --panel-2: #1e222b;
+    --border: #2a2f3a;
+    --text: #e8eaee;
+    --muted: #9aa3b2;
+    --accent: #2dd4bf;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    padding: 40px 24px 80px;
+  }
+  header {
+    max-width: 1400px;
+    margin: 0 auto 12px;
+  }
+  header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  header p { color: var(--muted); margin-top: 8px; max-width: 720px; }
+  .group {
+    max-width: 1400px;
+    margin: 44px auto 0;
+  }
+  .group h2 {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .thumb {
+    background: var(--panel-2);
+    position: relative;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .meta {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .meta .name { font-weight: 600; font-size: 15px; }
+  .meta a {
+    color: var(--accent);
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .meta a:hover { background: rgba(45, 212, 191, 0.1); }
+  footer {
+    max-width: 1400px;
+    margin: 48px auto 0;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Sentinel — Mobbin Section Comparison</h1>
+    <p>Reference screenshots from real B2B websites, grouped by the Sentinel page sections they inform. Click any image (or its pill button) to open the full, interactive section on Mobbin.</p>
+  </header>
+
+  <section class="group">
+    <h2>1 · Hero + trust signals</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/dfb72202-ae7b-4b55-8879-f68191fa6671"><img src="https://mobbin.com/api/mcp/short/lDdK7Z83" alt="Mural hero" loading="lazy"></a></div><div class="meta"><span class="name">Mural</span><a href="https://mobbin.com/sites/sections/dfb72202-ae7b-4b55-8879-f68191fa6671">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/c3761d10-9729-4f95-9f69-5986e8098d78"><img src="https://mobbin.com/api/mcp/short/AIvIbRYj" alt="Deel hero" loading="lazy"></a></div><div class="meta"><span class="name">Deel</span><a href="https://mobbin.com/sites/sections/c3761d10-9729-4f95-9f69-5986e8098d78">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/d90b1358-b442-43c8-ac4b-48404ac15aee"><img src="https://mobbin.com/api/mcp/short/UQ0gTO9I" alt="Loom hero" loading="lazy"></a></div><div class="meta"><span class="name">Loom</span><a href="https://mobbin.com/sites/sections/d90b1358-b442-43c8-ac4b-48404ac15aee">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/e3e0cae0-7396-4a71-8f66-ce6ea9d02737"><img src="https://mobbin.com/api/mcp/short/flrBOp9o" alt="Intercom hero" loading="lazy"></a></div><div class="meta"><span class="name">Intercom</span><a href="https://mobbin.com/sites/sections/e3e0cae0-7396-4a71-8f66-ce6ea9d02737">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/1f098a76-8333-4637-b6a2-f90ae93a9383"><img src="https://mobbin.com/api/mcp/short/tVHP5tDl" alt="Grammarly hero" loading="lazy"></a></div><div class="meta"><span class="name">Grammarly</span><a href="https://mobbin.com/sites/sections/1f098a76-8333-4637-b6a2-f90ae93a9383">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/ed247b3f-4e80-4c37-a3c2-e4fe1c675403"><img src="https://mobbin.com/api/mcp/short/uIKenVpN" alt="OpenPhone hero" loading="lazy"></a></div><div class="meta"><span class="name">OpenPhone</span><a href="https://mobbin.com/sites/sections/ed247b3f-4e80-4c37-a3c2-e4fe1c675403">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/d7af130c-abec-42d2-80fb-bd5ec4a963bb"><img src="https://mobbin.com/api/mcp/short/lEVh2Tzk" alt="Maze hero" loading="lazy"></a></div><div class="meta"><span class="name">Maze</span><a href="https://mobbin.com/sites/sections/d7af130c-abec-42d2-80fb-bd5ec4a963bb">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/f7e7d1fb-dea7-4a2e-9b13-e24c2dce167f"><img src="https://mobbin.com/api/mcp/short/nOvgKOip" alt="VEED hero" loading="lazy"></a></div><div class="meta"><span class="name">VEED</span><a href="https://mobbin.com/sites/sections/f7e7d1fb-dea7-4a2e-9b13-e24c2dce167f">Open</a></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>2 · Services overview (cards)</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/a3c3f82e-5230-4d24-85c2-15afdcce31cc"><img src="https://mobbin.com/api/mcp/short/cg61VNXD" alt="Complex Law services" loading="lazy"></a></div><div class="meta"><span class="name">Complex Law</span><a href="https://mobbin.com/sites/sections/a3c3f82e-5230-4d24-85c2-15afdcce31cc">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/814e0a13-81d8-4d89-95f1-33b72ef0d9d3"><img src="https://mobbin.com/api/mcp/short/brY3yARD" alt="Fiasco services" loading="lazy"></a></div><div class="meta"><span class="name">Fiasco</span><a href="https://mobbin.com/sites/sections/814e0a13-81d8-4d89-95f1-33b72ef0d9d3">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/106f217e-e46e-48ab-ab78-4a8be59a2023"><img src="https://mobbin.com/api/mcp/short/4Dg9CdyF" alt="Fiverr services" loading="lazy"></a></div><div class="meta"><span class="name">Fiverr</span><a href="https://mobbin.com/sites/sections/106f217e-e46e-48ab-ab78-4a8be59a2023">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/6aa10dc8-88e4-45d3-bfdb-632f5f688f20"><img src="https://mobbin.com/api/mcp/short/qbAIJJmu" alt="Intercom services" loading="lazy"></a></div><div class="meta"><span class="name">Intercom</span><a href="https://mobbin.com/sites/sections/6aa10dc8-88e4-45d3-bfdb-632f5f688f20">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/8354be46-ea56-48e0-9057-617a0caff0db"><img src="https://mobbin.com/api/mcp/short/j3SWsAgd" alt="Fibery services" loading="lazy"></a></div><div class="meta"><span class="name">Fibery</span><a href="https://mobbin.com/sites/sections/8354be46-ea56-48e0-9057-617a0caff0db">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/73d12c86-d8a2-4d9c-9b58-06d126d42cbd"><img src="https://mobbin.com/api/mcp/short/2lHCFMGs" alt="Intercom services alt" loading="lazy"></a></div><div class="meta"><span class="name">Intercom (alt)</span><a href="https://mobbin.com/sites/sections/73d12c86-d8a2-4d9c-9b58-06d126d42cbd">Open</a></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>3 · Who we serve (industries/verticals)</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/0e905104-e78b-471c-b746-e7b43e59ba48"><img src="https://mobbin.com/api/mcp/short/Ymb50gQm" alt="Zipline industries" loading="lazy"></a></div><div class="meta"><span class="name">Zipline</span><a href="https://mobbin.com/sites/sections/0e905104-e78b-471c-b746-e7b43e59ba48">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/fec992c6-ba64-47e5-ba47-178c1b4b452e"><img src="https://mobbin.com/api/mcp/short/PpYvTKMv" alt="TheyDo industries" loading="lazy"></a></div><div class="meta"><span class="name">TheyDo</span><a href="https://mobbin.com/sites/sections/fec992c6-ba64-47e5-ba47-178c1b4b452e">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/a7beb694-c7f2-4d1e-bc8f-b109efb061c7"><img src="https://mobbin.com/api/mcp/short/OwHJwBL4" alt="Zendesk industries" loading="lazy"></a></div><div class="meta"><span class="name">Zendesk</span><a href="https://mobbin.com/sites/sections/a7beb694-c7f2-4d1e-bc8f-b109efb061c7">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/4fe09499-45f6-4560-a108-3d25e00f5c2d"><img src="https://mobbin.com/api/mcp/short/3XDykOo5" alt="ElevenLabs industries" loading="lazy"></a></div><div class="meta"><span class="name">ElevenLabs</span><a href="https://mobbin.com/sites/sections/4fe09499-45f6-4560-a108-3d25e00f5c2d">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/fbd8d166-72c5-4f4b-8838-b690309c6aee"><img src="https://mobbin.com/api/mcp/short/FIwDc6vk" alt="Square industries" loading="lazy"></a></div><div class="meta"><span class="name">Square</span><a href="https://mobbin.com/sites/sections/fbd8d166-72c5-4f4b-8838-b690309c6aee">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/c5ea77a1-2829-4b15-ad38-df1ed1b4387b"><img src="https://mobbin.com/api/mcp/short/SEuF7YiC" alt="HubSpot industries" loading="lazy"></a></div><div class="meta"><span class="name">HubSpot</span><a href="https://mobbin.com/sites/sections/c5ea77a1-2829-4b15-ad38-df1ed1b4387b">Open</a></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>4 · How we work (step-by-step process)</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/6015ee44-7efe-4e14-a89d-acf163f2d427"><img src="https://mobbin.com/api/mcp/short/wzxlxdVS" alt="Complex Law process" loading="lazy"></a></div><div class="meta"><span class="name">Complex Law</span><a href="https://mobbin.com/sites/sections/6015ee44-7efe-4e14-a89d-acf163f2d427">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/4f88b0b2-0b0a-4f83-abba-cc5971bd13b8"><img src="https://mobbin.com/api/mcp/short/rbPy5x9P" alt="Superpower process" loading="lazy"></a></div><div class="meta"><span class="name">Superpower</span><a href="https://mobbin.com/sites/sections/4f88b0b2-0b0a-4f83-abba-cc5971bd13b8">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/fb48321e-47e3-4800-9680-e9e5c9af9270"><img src="https://mobbin.com/api/mcp/short/4174zGAF" alt="Anima process" loading="lazy"></a></div><div class="meta"><span class="name">Anima</span><a href="https://mobbin.com/sites/sections/fb48321e-47e3-4800-9680-e9e5c9af9270">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/ae184d2c-6579-4d93-a8a2-86948ec720b1"><img src="https://mobbin.com/api/mcp/short/efkrYIcn" alt="Framer process" loading="lazy"></a></div><div class="meta"><span class="name">Framer</span><a href="https://mobbin.com/sites/sections/ae184d2c-6579-4d93-a8a2-86948ec720b1">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/7c72acdf-c8a3-425c-b7a6-2e0c487bb17c"><img src="https://mobbin.com/api/mcp/short/8xJwkmET" alt="Function process" loading="lazy"></a></div><div class="meta"><span class="name">Function</span><a href="https://mobbin.com/sites/sections/7c72acdf-c8a3-425c-b7a6-2e0c487bb17c">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/9e3f57fc-198b-48ee-8ce9-fe488251d984"><img src="https://mobbin.com/api/mcp/short/R5c8J0Ud" alt="Upwork process" loading="lazy"></a></div><div class="meta"><span class="name">Upwork</span><a href="https://mobbin.com/sites/sections/9e3f57fc-198b-48ee-8ce9-fe488251d984">Open</a></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>5 · CTA band / consultation form</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/4d6c6c50-ebc6-4765-8847-faf418e7690c"><img src="https://mobbin.com/api/mcp/short/eFh6zKDL" alt="Shader CTA" loading="lazy"></a></div><div class="meta"><span class="name">Shader</span><a href="https://mobbin.com/sites/sections/4d6c6c50-ebc6-4765-8847-faf418e7690c">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/f6be2ce9-f7b9-46df-a21b-4dba68f0bc14"><img src="https://mobbin.com/api/mcp/short/uieqA4WM" alt="PayPal CTA" loading="lazy"></a></div><div class="meta"><span class="name">PayPal</span><a href="https://mobbin.com/sites/sections/f6be2ce9-f7b9-46df-a21b-4dba68f0bc14">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/31bbdad9-c589-4c1a-9170-cbd0e6a85e7c"><img src="https://mobbin.com/api/mcp/short/7pHh0d3K" alt="Air CTA" loading="lazy"></a></div><div class="meta"><span class="name">Air</span><a href="https://mobbin.com/sites/sections/31bbdad9-c589-4c1a-9170-cbd0e6a85e7c">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/719dadf3-2b7e-44b1-81f2-1492ae96ca6b"><img src="https://mobbin.com/api/mcp/short/XSvz5p2N" alt="Ada CTA" loading="lazy"></a></div><div class="meta"><span class="name">Ada</span><a href="https://mobbin.com/sites/sections/719dadf3-2b7e-44b1-81f2-1492ae96ca6b">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/5abe98dd-de17-456a-a534-dec4f6d39096"><img src="https://mobbin.com/api/mcp/short/9NPl8FWv" alt="Air CTA alt" loading="lazy"></a></div><div class="meta"><span class="name">Air (alt)</span><a href="https://mobbin.com/sites/sections/5abe98dd-de17-456a-a534-dec4f6d39096">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/5c26d14a-b7c2-49c6-bf54-1014a2889b84"><img src="https://mobbin.com/api/mcp/short/yMDhd5Gj" alt="monday.com CTA" loading="lazy"></a></div><div class="meta"><span class="name">monday.com</span><a href="https://mobbin.com/sites/sections/5c26d14a-b7c2-49c6-bf54-1014a2889b84">Open</a></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>6 · Engagement tiers (pricing-style)</h2>
+    <div class="grid">
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/44d2cc58-84ba-4c2d-8908-c3d9d7d12cd9"><img src="https://mobbin.com/api/mcp/short/i3zr93Bb" alt="Twingate pricing" loading="lazy"></a></div><div class="meta"><span class="name">Twingate</span><a href="https://mobbin.com/sites/sections/44d2cc58-84ba-4c2d-8908-c3d9d7d12cd9">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/54c59322-41f7-4850-8426-73d076f881ce"><img src="https://mobbin.com/api/mcp/short/EojeHfJ0" alt="Equals pricing" loading="lazy"></a></div><div class="meta"><span class="name">Equals</span><a href="https://mobbin.com/sites/sections/54c59322-41f7-4850-8426-73d076f881ce">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/f7955b72-b26d-4771-8a26-d71401da015a"><img src="https://mobbin.com/api/mcp/short/qlsYruil" alt="Speakeasy pricing" loading="lazy"></a></div><div class="meta"><span class="name">Speakeasy</span><a href="https://mobbin.com/sites/sections/f7955b72-b26d-4771-8a26-d71401da015a">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/5045f143-e9f1-488c-9cdd-a03217a71a6e"><img src="https://mobbin.com/api/mcp/short/vxSNu5il" alt="Maze pricing" loading="lazy"></a></div><div class="meta"><span class="name">Maze</span><a href="https://mobbin.com/sites/sections/5045f143-e9f1-488c-9cdd-a03217a71a6e">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/7a46f685-fc21-4d53-9507-f303b888f976"><img src="https://mobbin.com/api/mcp/short/Unz1yA1V" alt="Front pricing" loading="lazy"></a></div><div class="meta"><span class="name">Front</span><a href="https://mobbin.com/sites/sections/7a46f685-fc21-4d53-9507-f303b888f976">Open</a></div></div>
+      <div class="card"><div class="thumb"><a href="https://mobbin.com/sites/sections/eead2ca1-25a8-44bb-830a-eed6a08a775e"><img src="https://mobbin.com/api/mcp/short/AKjsAPst" alt="Linear pricing" loading="lazy"></a></div><div class="meta"><span class="name">Linear</span><a href="https://mobbin.com/sites/sections/eead2ca1-25a8-44bb-830a-eed6a08a775e">Open</a></div></div>
+    </div>
+  </section>
+
+  <footer>
+    Screenshots are served by Mobbin via short-lived image links. If an image fails to load, the "Open" button still links to the full section. You may need to be signed in to Mobbin for the linked pages.
+  </footer>
+</body>
+</html>

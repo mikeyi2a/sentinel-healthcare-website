@@ -1,26 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Google Sans Flex", "Google Sans", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-ovo), ui-serif, Georgia, serif;
+  --font-heading: var(--font-ovo), ui-serif, Georgia, serif;
+
+  --color-primary-navy: #0D4655;
+  --color-secondary-teal: #1D6B7D;
+  --color-slate-body: #4A6570;
+  --color-coral-accent: #FF6F4B;
+  --color-tint-1: #ECF2F6;
+  --color-tint-2: #E2F0F3;
+  --color-tint-3: #DCEAEE;
+}
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #4a6570;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Placeholder backdrop for the hero card until a real video is supplied. */
+.hero-gradient {
+  background-color: #062a36;
+  background-image:
+    radial-gradient(42% 52% at 16% 20%, rgba(87, 191, 207, 0.9) 0%, transparent 62%),
+    radial-gradient(48% 58% at 84% 14%, rgba(29, 107, 125, 0.95) 0%, transparent 66%),
+    radial-gradient(36% 44% at 64% 70%, rgba(255, 111, 75, 0.32) 0%, transparent 62%),
+    radial-gradient(65% 80% at 28% 96%, rgba(4, 29, 38, 0.95) 0%, transparent 72%),
+    radial-gradient(58% 70% at 96% 90%, rgba(13, 70, 85, 0.9) 0%, transparent 70%);
+  background-size: 150% 150%;
+  animation: hero-gradient-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes hero-gradient-drift {
+  0% {
+    background-position:
+      0% 0%,
+      100% 0%,
+      50% 100%,
+      0% 100%,
+      100% 100%;
+  }
+  100% {
+    background-position:
+      35% 30%,
+      60% 35%,
+      30% 55%,
+      45% 60%,
+      55% 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient {
+    animation: none;
+  }
 }
