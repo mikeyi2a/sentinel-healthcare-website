@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Right: links and CTA grouped together */}
         <div className="flex items-center gap-3">
           <div
-            className={`hidden items-center gap-1 rounded-[6px] p-1.5 pl-3 transition-colors md:flex ${
+            className={`hidden items-center gap-1 rounded-[6px] p-1.5 pl-3 transition-colors lg:flex ${
               isTransparent
                 ? "bg-white/90 shadow-sm backdrop-blur-md"
                 : ""
@@ -92,11 +92,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             </Button>
           </div>
 
-          {/* Mobile toggle with 6px radius */}
+          {/* Mobile / Tablet toggle with 6px radius */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`flex h-10 w-10 items-center justify-center rounded-[6px] transition-colors md:hidden ${
+            className={`flex h-10 w-10 items-center justify-center rounded-[6px] transition-colors lg:hidden ${
               isTransparent
                 ? "bg-white/20 text-white backdrop-blur-md"
                 : "bg-[#E2F0F3] text-[#0D4655]"
@@ -117,9 +117,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile / Tablet Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#DCEAEE] bg-[#FFFFFF] px-6 py-6 space-y-4 shadow-lg">
+        <div className="lg:hidden border-t border-[#DCEAEE] bg-[#FFFFFF] px-6 py-6 space-y-4 shadow-lg">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link

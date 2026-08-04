@@ -118,7 +118,7 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
               },
             }}
           >
-            <h1 className="max-w-[16ch] font-serif text-[clamp(2.5rem,7.5vw,6rem)] font-medium leading-[1.02] tracking-[-0.03em] text-white pointer-events-auto text-balance">
+            <h1 className="max-w-[16ch] font-serif text-[clamp(3.2rem,8.5vw,6.5rem)] font-medium leading-[1.02] tracking-[-0.03em] text-white pointer-events-auto text-balance">
               {headingLines.map((line) => (
                 <motion.span key={line} variants={reveal} className="block">
                   {line}

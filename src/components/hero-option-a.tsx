@@ -34,7 +34,7 @@ export const HeroOptionA: React.FC<HeroOptionAProps> = ({
   imageAlt = "Sentinel Healthcare Consulting clinical risk assessment session",
 }) => {
   return (
-    <section className="w-full bg-[#FFFFFF] py-12 md:py-16 lg:py-24 font-sans">
+    <section className="w-full bg-[#FFFFFF] py-24 md:py-28 lg:py-36 font-sans">
       <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
         {/* Left Typography & Actions Column */}
         <div className="flex w-full lg:w-1/2 flex-col items-start text-left">
@@ -44,7 +44,7 @@ export const HeroOptionA: React.FC<HeroOptionAProps> = ({
             </Badge>
           )}
 
-          <h1 className="mb-5 font-serif text-[32px] sm:text-[48px] lg:text-[64px] font-medium tracking-[-0.02em] text-[#0D4655] leading-[1.1]">
+          <h1 className="mb-5 font-serif text-[44px] sm:text-[54px] lg:text-[64px] font-medium tracking-[-0.02em] text-[#0D4655] leading-[1.06]">
             {heading}
           </h1>
 
