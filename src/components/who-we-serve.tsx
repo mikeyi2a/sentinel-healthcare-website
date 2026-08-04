@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Badge from "@/components/ui/badge";
+import { motion, useReducedMotion } from "framer-motion";
 
 export interface AudienceItem {
   id: string;
@@ -36,6 +39,8 @@ const defaultAudiences: AudienceItem[] = [
   },
 ];
 
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export const WhoWeServe: React.FC<WhoWeServeProps> = ({
   eyebrow = "WHO WE SERVE",
   heading = "Tailored clinical risk solutions for key healthcare stakeholders",
@@ -43,12 +48,20 @@ export const WhoWeServe: React.FC<WhoWeServeProps> = ({
   audiences = defaultAudiences,
   className = "",
 }) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="who-we-serve"
-      className={`w-full bg-[#FFFFFF] py-12 md:py-16 lg:py-24 font-sans ${className}`}
+      className={`w-full bg-[#FFFFFF] py-24 md:py-28 lg:py-36 font-sans ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-10">
+      <motion.div
+        className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-10"
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: EASE_EXPO }}
+      >
         {/* Section Header Stack matching reference layout */}
         <div className="flex flex-col gap-4 max-w-[780px]">
           <div className="inline-flex">
@@ -68,9 +81,14 @@ export const WhoWeServe: React.FC<WhoWeServeProps> = ({
 
         {/* Vertical Stack of Horizontal Cards matching reference layout */}
         <div className="flex flex-col gap-4 w-full">
-          {audiences.map((audience) => (
-            <div
+          {audiences.map((audience, idx) => (
+            <motion.div
               key={audience.id}
+              initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: EASE_EXPO }}
+              whileHover={{ y: -2, transition: { duration: 0.2 } }}
               className="w-full rounded-[6px] bg-tint-1 p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-colors hover:bg-[#E2F0F3]/50"
             >
               {/* Left Title Column */}
@@ -86,10 +104,10 @@ export const WhoWeServe: React.FC<WhoWeServeProps> = ({
                   {audience.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

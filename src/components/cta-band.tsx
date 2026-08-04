@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/badge";
+import { motion, useReducedMotion } from "framer-motion";
 
 export interface CtaBandProps {
   eyebrow?: string;
@@ -14,6 +17,8 @@ export interface CtaBandProps {
   className?: string;
 }
 
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export const CtaBand: React.FC<CtaBandProps> = ({
   eyebrow = "FREE CONSULTATION",
   heading = "Start with a conversation, not a contract.",
@@ -24,14 +29,22 @@ export const CtaBand: React.FC<CtaBandProps> = ({
   imageAlt = "Sentinel Healthcare clinical consultation session",
   className = "",
 }) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="cta-band"
-      className={`w-full bg-[#FFFFFF] py-12 md:py-16 lg:py-24 font-sans ${className}`}
+      className={`w-full bg-[#FFFFFF] py-24 md:py-28 lg:py-36 font-sans ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12">
+      <motion.div
+        className="mx-auto w-full max-w-[1440px] px-6 lg:px-12"
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.85, ease: EASE_EXPO }}
+      >
         {/* Split CTA Box matching reference layout */}
-        <div className="w-full rounded-[6px] overflow-hidden bg-[#0D4655] flex flex-col lg:flex-row min-h-[440px]">
+        <div className="w-full rounded-[6px] overflow-hidden bg-[#0D4655] flex flex-col lg:flex-row min-h-[440px] shadow-sm">
           {/* Left Column - Content & White-to-Orange CTA */}
           <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-start text-left gap-6 text-white">
             <Badge variant="dark">{eyebrow}</Badge>
@@ -64,7 +77,7 @@ export const CtaBand: React.FC<CtaBandProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#0D4655]/60 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

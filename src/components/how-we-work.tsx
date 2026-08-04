@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Button from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/badge";
+import { motion, useReducedMotion } from "framer-motion";
 
 export type WorkStep = {
   id: number;
@@ -62,6 +63,8 @@ const defaultSteps: WorkStep[] = [
   },
 ];
 
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export interface HowWeWorkProps {
   eyebrow?: string;
   title?: string;
@@ -78,13 +81,20 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({
   className = "",
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
       id="how-we-work"
-      className={`w-full bg-[#FFFFFF] py-12 md:py-16 lg:py-24 font-sans ${className}`}
+      className={`w-full bg-[#FFFFFF] py-24 md:py-28 lg:py-36 font-sans ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-10">
+      <motion.div
+        className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-10"
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: EASE_EXPO }}
+      >
         {/* Section Header */}
         <div className="flex flex-col gap-4 max-w-[780px]">
           <div className="inline-flex">
@@ -107,10 +117,15 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({
           ref={trackRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full"
         >
-          {steps.map((item) => (
-            <div
+          {steps.map((item, idx) => (
+            <motion.div
               key={item.id}
-              className="h-full rounded-[6px] bg-tint-1 overflow-hidden flex flex-col justify-between"
+              initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: idx * 0.08, ease: EASE_EXPO }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="h-full rounded-[6px] bg-tint-1 overflow-hidden flex flex-col justify-between transition-colors hover:bg-[#E2F0F3]/40"
             >
               {/* Image Frame with Number Badge */}
               <div className="relative aspect-[16/10] w-full bg-[#E2F0F3] overflow-hidden flex-shrink-0">
@@ -154,7 +169,7 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -186,7 +201,7 @@ export const HowWeWork: React.FC<HowWeWorkProps> = ({
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

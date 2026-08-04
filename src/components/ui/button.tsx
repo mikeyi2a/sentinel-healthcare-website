@@ -1,5 +1,8 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -21,17 +24,12 @@ export const Button: React.FC<ButtonProps> = ({
   rel,
   ...props
 }) => {
+  const reduceMotion = useReducedMotion();
+
   // Base classes: Completely flat (no shadow) with 6px border radius, capital case uppercase typography
   const baseClasses =
-    "group relative flex flex-col items-center justify-center h-11 overflow-hidden rounded-[6px] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.11em] cursor-pointer transition-all duration-200 select-none";
+    "group relative flex flex-col items-center justify-center h-11 overflow-hidden rounded-[6px] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.11em] cursor-pointer transition-colors duration-200 select-none";
 
-  // Exact color transitions on hover:
-  // Primary: Coral (#FF6F4B) -> Primary Navy-Teal (#0D4655)
-  // Secondary: Light Teal Tint (#E2F0F3) -> Primary Navy-Teal (#0D4655)
-  // White: Solid White (#FFFFFF) -> Coral Orange (#FF6F4B)
-  // Outline: Light Teal Tint (#E2F0F3) -> Primary Navy-Teal (#0D4655)
-  // Navy: Primary Navy-Teal (#0D4655) -> Coral (#FF6F4B)
-  // All variants are solid fills — no outlines — to match the flat card styling.
   const variantClasses = {
     primary: "bg-[#FF6F4B] text-white hover:bg-[#0D4655]",
     secondary: "bg-[#E2F0F3] text-[#0D4655] hover:bg-[#0D4655]",
@@ -80,26 +78,40 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link
-        href={href}
-        target={target}
-        rel={rel}
-        className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      <motion.div
+        whileHover={reduceMotion ? {} : { y: -1.5 }}
+        whileTap={reduceMotion ? {} : { scale: 0.98 }}
+        transition={{ duration: 0.15 }}
+        className="inline-block"
       >
-        {innerContent}
-      </Link>
+        <Link
+          href={href}
+          target={target}
+          rel={rel}
+          className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+        >
+          {innerContent}
+        </Link>
+      </motion.div>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`${baseClasses} ${variantClasses[variant]} ${className}`}
-      {...props}
+    <motion.div
+      whileHover={reduceMotion ? {} : { y: -1.5 }}
+      whileTap={reduceMotion ? {} : { scale: 0.98 }}
+      transition={{ duration: 0.15 }}
+      className="inline-block"
     >
-      {innerContent}
-    </button>
+      <button
+        type="button"
+        onClick={onClick}
+        className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+        {...props}
+      >
+        {innerContent}
+      </button>
+    </motion.div>
   );
 };
 

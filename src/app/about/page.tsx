@@ -5,9 +5,11 @@ import Navbar from "@/components/navbar";
 import Button from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Handshake, Eye, Medal, CheckCircle, Lock, Scales, Sparkle } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
+import { motion, useReducedMotion } from "framer-motion";
 
 const companyFacts = [
-  { label: "Incorporated", value: "15 July 2026" },
+  { label: "Full Legal Name", value: "Sentinel Healthcare Consulting Limited" },
+  { label: "Registration Date", value: "15 July 2026" },
   { label: "RC Number", value: "9683677" },
   { label: "Tax ID (TIN)", value: "2622447272211" },
   { label: "Corporate Structure", value: "Private company limited by shares" },
@@ -24,29 +26,29 @@ const visionMarkers = [
   },
   {
     num: "02",
-    title: "Boards govern with data",
-    desc: "Safety metrics reach the board quarterly in a form directors can question.",
-    highlight: false,
+    title: "Governance is practical",
+    desc: "Controls fit real shift patterns, real staffing levels and real hospital budgets.",
+    highlight: true,
   },
   {
     num: "03",
-    title: "Accreditation follows",
-    desc: "Facilities pass surveys because the systems are real, not rehearsed.",
+    title: "Accreditation is predictable",
+    desc: "Surveys verify what a facility already does every day, with zero last-minute panic.",
     highlight: false,
   },
   {
     num: "04",
-    title: "We become unnecessary",
-    desc: "Clients run their own risk function and call us for judgement, not delivery.",
-    highlight: true, // Strongest trust signal
+    title: "Leadership has visibility",
+    desc: "Boards and CEOs receive plain-language risk registers they can act on with confidence.",
+    highlight: false,
   },
 ];
 
 const coreValues = [
   {
     icon: <Handshake className="w-6 h-6 text-[#FF6F4B]" />,
-    title: "Patients First",
-    desc: "Every recommendation is measured against one question: does this make care safer for the person in the bed?",
+    title: "Patient Safety First",
+    desc: "Every control, SOP and diagnostic we deliver must answer one question: does this protect the person in the bed?",
   },
   {
     icon: <ShieldCheck className="w-6 h-6 text-[#FF6F4B]" />,
@@ -75,15 +77,24 @@ const coreValues = [
   },
 ];
 
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export default function AboutPage() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       <Navbar />
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="w-full bg-[#0D4655] py-16 lg:py-24 text-white">
-          <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
+        <section className="w-full bg-[#0D4655] py-28 lg:py-36 text-white">
+          <motion.div
+            className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6"
+            initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, ease: EASE_EXPO }}
+          >
             <Badge variant="dark">
               WHO WE ARE
             </Badge>
@@ -95,11 +106,11 @@ export default function AboutPage() {
             <p className="text-base sm:text-lg text-[#E2F0F3]/90 max-w-[760px] leading-relaxed text-balance">
               Sentinel Healthcare Consulting Limited provides healthcare organisations with practical, data-driven solutions that improve patient safety, clinical governance and organisational performance.
             </p>
-          </div>
+          </motion.div>
         </section>
 
         {/* Section: Who We Are & Corporate Facts */}
-        <section className="w-full py-16 lg:py-24 bg-[#FFFFFF]">
+        <section className="w-full py-28 lg:py-36 bg-[#FFFFFF]">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left Column: Corporate Information */}
@@ -151,7 +162,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section: Our Mission */}
-        <section className="w-full py-16 lg:py-24 bg-tint-1">
+        <section className="w-full py-28 lg:py-36 bg-tint-1">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             {/* Header & Clause 3(A) Verification */}
             <div className="flex flex-col gap-4 max-w-[1180px]">
@@ -210,7 +221,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section: Our Vision & 4 Markers */}
-        <section className="w-full py-16 lg:py-24 bg-[#FFFFFF]">
+        <section className="w-full py-28 lg:py-36 bg-[#FFFFFF]">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             <div className="flex flex-col gap-4 max-w-[800px]">
               <Badge>
@@ -280,7 +291,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section: Our Values Grid */}
-        <section className="w-full py-16 lg:py-24 bg-[#0D4655] text-white">
+        <section className="w-full py-28 lg:py-36 bg-[#0D4655] text-white">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             <div className="flex flex-col gap-4 max-w-[760px]">
               <Badge variant="dark">

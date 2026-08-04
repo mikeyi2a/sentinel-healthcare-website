@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Compass,
@@ -8,6 +10,7 @@ import {
   MessageSquareText,
 } from "lucide-react";
 import Badge from "@/components/ui/badge";
+import { motion, useReducedMotion } from "framer-motion";
 
 export interface Differentiator {
   id: string;
@@ -61,6 +64,8 @@ const defaultDifferentiators: Differentiator[] = [
   },
 ];
 
+const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 export interface WhySentinelProps {
   eyebrow?: string;
   heading?: string;
@@ -76,12 +81,20 @@ export const WhySentinel: React.FC<WhySentinelProps> = ({
   differentiators = defaultDifferentiators,
   className = "",
 }) => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="why-sentinel"
-      className={`w-full bg-[#0D4655] py-16 lg:py-24 font-sans text-white ${className}`}
+      className={`w-full bg-[#0D4655] py-28 lg:py-36 font-sans text-white ${className}`}
     >
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12 text-center items-center">
+      <motion.div
+        className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12 text-center items-center"
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.8, ease: EASE_EXPO }}
+      >
         {/* Section Header Stack */}
         <div className="flex flex-col items-center gap-4 max-w-[760px] text-center">
           <div className="inline-flex">
@@ -101,9 +114,14 @@ export const WhySentinel: React.FC<WhySentinelProps> = ({
 
         {/* 6 Differentiators Grid: 3 columns desktop / 2 tablet / 1 mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full text-left">
-          {differentiators.map((item) => (
-            <div
+          {differentiators.map((item, idx) => (
+            <motion.div
               key={item.id}
+              initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: idx * 0.07, ease: EASE_EXPO }}
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
               className="rounded-[6px] bg-[#09333E] p-6 lg:p-8 flex flex-col gap-4 transition-colors hover:bg-[#072B35]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-[6px] bg-[#1D6B7D]/40">
@@ -118,10 +136,10 @@ export const WhySentinel: React.FC<WhySentinelProps> = ({
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
