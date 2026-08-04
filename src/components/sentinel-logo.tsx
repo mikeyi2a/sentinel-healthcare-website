@@ -15,12 +15,12 @@ export const SentinelLogo: React.FC<SentinelLogoProps> = ({
   const altText = "Sentinel Healthcare Consulting";
 
   return (
-    <Link href="/" className={`inline-flex items-center select-none overflow-visible ${className}`}>
+    <Link href="/" className={`inline-flex items-center select-none ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={logoSrc}
         alt={altText}
-        className="h-10 sm:h-11 lg:h-[48px] w-auto object-contain overflow-visible max-w-none transition-all"
+        className="h-10 sm:h-12 lg:h-[52px] w-auto object-contain transition-all"
       />
     </Link>
   );
