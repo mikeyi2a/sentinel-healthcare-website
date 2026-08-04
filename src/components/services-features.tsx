@@ -116,7 +116,7 @@ export const ServicesFeatures: React.FC<ServicesFeaturesProps> = ({
   return (
     <section
       id="services"
-      className={`w-full bg-tint-1 py-12 md:py-16 lg:py-24 font-sans ${className}`}
+      className={`w-full bg-tint-1 py-24 md:py-28 lg:py-36 font-sans ${className}`}
     >
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
         {/* Section Header with View All Button */}
@@ -139,7 +139,7 @@ export const ServicesFeatures: React.FC<ServicesFeaturesProps> = ({
 
           {/* View All Services Header Button */}
           <div className="flex-shrink-0">
-            <Button href={viewAllHref} variant="secondary">
+            <Button href={viewAllHref} variant="white">
               <span>{viewAllText}</span>
               <ArrowRight className="w-4 h-4" />
             </Button>

@@ -78,7 +78,7 @@ export default function LeadershipPage() {
 
       <main className="flex-1">
         {/* Section: Board of Directors — top section */}
-        <section className="w-full pt-12 lg:pt-20 pb-16 lg:pb-24 bg-[#FFFFFF]">
+        <section className="w-full pt-20 lg:pt-28 pb-24 lg:pb-32 bg-[#FFFFFF]">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             <h1 className="font-serif text-[40px] sm:text-[56px] lg:text-[72px] font-medium leading-[1.05] tracking-[-0.02em] text-[#0D4655] text-balance">
               Meet the <span className="text-[#1D6B7D]/40">Board</span>
@@ -135,7 +135,7 @@ export default function LeadershipPage() {
         </section>
 
         {/* Section: Associate Network — horizontal slideshow */}
-        <section className="w-full py-16 lg:py-24 bg-[#F4F9FB] border-t border-[#DCEAEE]">
+        <section className="w-full py-28 lg:py-36 bg-[#F4F9FB] border-t border-[#DCEAEE]">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div className="flex flex-col gap-4 max-w-[760px]">

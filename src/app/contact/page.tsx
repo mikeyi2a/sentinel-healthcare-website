@@ -29,7 +29,7 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="w-full bg-[#0D4655] py-16 lg:py-24 text-white">
+        <section className="w-full bg-[#0D4655] py-28 lg:py-36 text-white">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
             <Badge variant="dark">
               FREE 45-MINUTE CONSULTATION
@@ -46,7 +46,7 @@ export default function ContactPage() {
         </section>
 
         {/* Section: Contact Grid & Form */}
-        <section id="contact-form" className="w-full py-16 lg:py-24 bg-tint-1">
+        <section id="contact-form" className="w-full py-28 lg:py-36 bg-tint-1">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               {/* Left Column: Contact Details & Guarantee */}
