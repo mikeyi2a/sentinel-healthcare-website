@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useReducedMotion } from "framer-motion";
-import { Envelope, Phone, MapPin, ArrowUp } from "@phosphor-icons/react";
+import { Envelope, Phone, MapPin, Globe, ArrowUp } from "@phosphor-icons/react";
 
 const MeshGradient = dynamic(
   () => import("@paper-design/shaders-react").then((mod) => mod.MeshGradient),
@@ -92,17 +92,21 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
             </p>
 
             <div className="flex flex-col gap-2 pt-2 text-xs text-white/80">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
-                <span>Lekki, Lagos State, Nigeria</span>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#FF6F4B] flex-shrink-0 mt-0.5" />
+                <span>T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
-                <span>+234 905 278 0290</span>
+                <a href="tel:+2349052780290" className="hover:text-white transition-colors">+234 905 278 0290</a>
               </div>
               <div className="flex items-center gap-2">
                 <Envelope className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
-                <span>hello@sentinelhc.com</span>
+                <a href="mailto:hello@sentinelhcl.com" className="hover:text-white transition-colors">hello@sentinelhcl.com</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
+                <a href="https://www.sentinelhcl.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.sentinelhcl.com</a>
               </div>
             </div>
           </div>

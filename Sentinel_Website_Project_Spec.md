@@ -61,7 +61,7 @@ Tagline: **"Safer care, by design."**
 
 ### F. Contact Page (`/contact`)
 - **Header**: "Start with a conversation, not a contract."
-- **Details**: `hello@sentinelhc.com` · `+234 905 278 0290` · Lekki, Lagos State.
+- **Details**: `hello@sentinelhcl.com` · `+234 905 278 0290` · `www.sentinelhcl.com` · T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State.
 - Interactive Consultation Form & Corporate Governance Verification.
 
 ---

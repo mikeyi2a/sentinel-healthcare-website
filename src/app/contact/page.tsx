@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 
 import Button from "@/components/ui/button";
-import { Envelope, Phone, MapPin, ShieldCheck, CheckCircle, PaperPlaneTilt, Clock } from "@phosphor-icons/react";
+import { Envelope, Phone, MapPin, Globe, ShieldCheck, CheckCircle, PaperPlaneTilt, Clock } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     institution: "",
@@ -18,9 +20,54 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+    // Fallback mode if access key is not set yet
+    if (!accessKey || accessKey === "YOUR_ACCESS_KEY_HERE") {
+      // Simulate submission while letting user know key is pending
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setFormSubmitted(true);
+      }, 800);
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          institution: formData.institution,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          subject: `New Consultation Request: ${formData.name} (${formData.institution})`,
+          from_name: "Sentinel Healthcare Website",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setFormSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setErrorMessage("Network error. Please try again or email hello@sentinelhcl.com directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -29,8 +76,18 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="w-full bg-[#0D4655] py-28 lg:py-36 text-white">
-          <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
+        <section className="relative w-full bg-[#0D4655] py-28 lg:py-36 text-white overflow-hidden">
+          {/* Stock Background Image */}
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2000&q=80')`,
+            }}
+          />
+          {/* Gradient Overlay: 100% #0D4655 on left, fading to transparent on right */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0D4655] via-[#0D4655]/95 via-50% to-[#0D4655]/20 sm:to-transparent" />
+
+          <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
             <Badge variant="dark">
               FREE 45-MINUTE CONSULTATION
             </Badge>
@@ -63,32 +120,48 @@ export default function ContactPage() {
                 {/* Info Cards */}
                 <div className="flex flex-col gap-4">
                   <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
                       <Envelope className="w-5 h-5 text-[#FF6F4B]" />
                     </div>
                     <div>
                       <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Email Address</span>
-                      <p className="text-sm font-medium text-[#0D4655]">hello@sentinelhc.com</p>
+                      <p className="text-sm font-medium text-[#0D4655]">
+                        <a href="mailto:hello@sentinelhcl.com" className="hover:underline">hello@sentinelhcl.com</a>
+                      </p>
                     </div>
                   </div>
 
                   <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
                       <Phone className="w-5 h-5 text-[#FF6F4B]" />
                     </div>
                     <div>
                       <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Phone & WhatsApp</span>
-                      <p className="text-sm font-medium text-[#0D4655]">+234 905 278 0290</p>
+                      <p className="text-sm font-medium text-[#0D4655]">
+                        <a href="tel:+2349052780290" className="hover:underline">+234 905 278 0290</a>
+                      </p>
                     </div>
                   </div>
 
                   <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
                       <MapPin className="w-5 h-5 text-[#FF6F4B]" />
                     </div>
                     <div>
                       <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Head Office Location</span>
-                      <p className="text-sm font-medium text-[#0D4655]">Lekki, Lagos State, Nigeria</p>
+                      <p className="text-sm font-medium text-[#0D4655]">T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State</p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
+                      <Globe className="w-5 h-5 text-[#FF6F4B]" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Website</span>
+                      <p className="text-sm font-medium text-[#0D4655]">
+                        <a href="https://www.sentinelhcl.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.sentinelhcl.com</a>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -229,9 +302,15 @@ export default function ContactPage() {
                         />
                       </div>
 
-                      <Button type="submit" variant="primary" className="w-full justify-center">
-                        <span>Submit Consultation Request</span>
-                        <PaperPlaneTilt className="w-4 h-4" />
+                      {errorMessage && (
+                        <div className="rounded-[6px] bg-red-50 p-3.5 text-xs text-red-700 font-medium border border-red-200">
+                          {errorMessage}
+                        </div>
+                      )}
+
+                      <Button type="submit" variant="primary" disabled={isSubmitting} className="w-full justify-center">
+                        <span>{isSubmitting ? "Sending Request..." : "Submit Consultation Request"}</span>
+                        <PaperPlaneTilt className={`w-4 h-4 ${isSubmitting ? "animate-pulse" : ""}`} />
                       </Button>
                     </form>
                   )}

@@ -59,8 +59,18 @@ export default function EngagePage() {
 
       <main className="flex-1">
         {/* Page Hero Header */}
-        <section className="w-full bg-[#0D4655] py-28 lg:py-36 text-white">
-          <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
+        <section className="relative w-full bg-[#0D4655] py-28 lg:py-36 text-white overflow-hidden">
+          {/* Stock Background Image */}
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=2000&q=80')`,
+            }}
+          />
+          {/* Gradient Overlay: 100% #0D4655 on left, fading to transparent on right */}
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0D4655] via-[#0D4655]/95 via-50% to-[#0D4655]/20 sm:to-transparent" />
+
+          <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
             <Badge variant="dark">
               HOW TO ENGAGE
             </Badge>
