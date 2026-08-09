@@ -25,8 +25,7 @@ const defaultSteps: WorkStep[] = [
     description:
       "We start on site with your people — clinical, administrative, and finance. The risks that matter are usually already known by someone inside the hospital.",
     deliverables: ["Frontline interviews", "Near-miss discovery", "Staff risk feedback"],
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/how-we-work-listen.png",
   },
   {
     id: 2,
@@ -36,8 +35,7 @@ const defaultSteps: WorkStep[] = [
     description:
       "Structured assessment against national requirements (NHIA, NDPA) and international good practice, with evidence behind every finding.",
     deliverables: ["Regulatory audit", "Risk scoring register", "Prioritised findings report"],
-    image:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/how-we-work-diagnose.png",
   },
   {
     id: 3,
@@ -47,8 +45,7 @@ const defaultSteps: WorkStep[] = [
     description:
       "Controls, workflows, and documents built around your real staffing and budget — not an idealised hospital template.",
     deliverables: ["Custom SOPs", "Incident reporting workflows", "Board oversight packs"],
-    image:
-      "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/how-we-work-design.png",
   },
   {
     id: 4,
@@ -58,8 +55,7 @@ const defaultSteps: WorkStep[] = [
     description:
       "We train your team, hand over the tools, and stay close enough to make sure the change holds long after we leave.",
     deliverables: ["Hands-on staff workshops", "Train-the-trainer kits", "Refresher modules"],
-    image:
-      "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/how-we-work-embed.png",
   },
 ];
 

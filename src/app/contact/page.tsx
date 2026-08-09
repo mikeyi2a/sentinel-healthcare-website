@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 
 import Button from "@/components/ui/button";
-import { Envelope, Phone, MapPin, Globe, ShieldCheck, CheckCircle, PaperPlaneTilt, Clock } from "@phosphor-icons/react";
+import { Envelope, Phone, MapPin, CheckCircle, PaperPlaneTilt } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
 
 export default function ContactPage() {
@@ -63,7 +63,7 @@ export default function ContactPage() {
       } else {
         setErrorMessage(result.message || "Failed to send message. Please try again.");
       }
-    } catch (err) {
+    } catch {
       setErrorMessage("Network error. Please try again or email hello@sentinelhcl.com directly.");
     } finally {
       setIsSubmitting(false);
@@ -89,7 +89,7 @@ export default function ContactPage() {
 
           <div className="relative z-20 mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-6">
             <Badge variant="dark">
-              FREE 45-MINUTE CONSULTATION
+              FREE 30-MINUTE CONSULTATION
             </Badge>
 
             <h1 className="font-serif text-[36px] sm:text-[52px] lg:text-[64px] font-medium leading-[1.1] tracking-[-0.02em] text-white max-w-[800px] text-balance">
@@ -97,7 +97,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-base sm:text-lg text-[#E2F0F3]/90 max-w-[720px] leading-relaxed text-balance">
-              Tell us what is keeping you up at night. We will spend 45 minutes with you at no cost and tell you honestly whether you need us — and if so, where to start.
+              Tell us what is keeping you up at night. We will spend 30 minutes with you at no cost and tell you honestly whether you need us — and if so, where to start.
             </p>
           </div>
         </section>
@@ -153,28 +153,10 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
-                      <Globe className="w-5 h-5 text-[#FF6F4B]" />
-                    </div>
-                    <div>
-                      <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Website</span>
-                      <p className="text-sm font-medium text-[#0D4655]">
-                        <a href="https://www.sentinelhcl.com" target="_blank" rel="noopener noreferrer" className="hover:underline">www.sentinelhcl.com</a>
-                      </p>
-                    </div>
-                  </div>
+
                 </div>
 
-                {/* Governance Footer Note */}
-                <div className="rounded-[6px] bg-[#0D4655] p-6 text-white flex flex-col gap-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#E2F0F3]">
-                    Corporate Registration
-                  </span>
-                  <p className="text-xs text-[#E2F0F3]/80 leading-relaxed">
-                    Sentinel Healthcare Consulting Limited · RC 9683677 · Incorporated under CAMA 2020
-                  </p>
-                </div>
+
               </div>
 
               {/* Right Column: Interactive Consultation Request Form */}
@@ -189,7 +171,7 @@ export default function ContactPage() {
                         Consultation Request Received
                       </h3>
                       <p className="text-sm text-[#4A6570] max-w-[440px]">
-                        Thank you for reaching out. A senior adviser will contact you at <strong>{formData.email}</strong> within 24 hours to schedule your 45-minute consultation.
+                        Thank you for reaching out. A senior adviser will contact you at <strong>{formData.email}</strong> within 24 hours to schedule your 30-minute consultation.
                       </p>
                       <button
                         onClick={() => setFormSubmitted(false)}
@@ -202,7 +184,7 @@ export default function ContactPage() {
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                       <div className="flex flex-col gap-1">
                         <h3 className="font-serif text-2xl font-medium text-[#0D4655]">
-                          Book Your 45-Minute Consultation
+                          Book Your 30-Minute Consultation
                         </h3>
                         <p className="text-xs text-[#4A6570]">
                           Zero commitment required. We will discuss your current risk posture and advise on practical next steps.

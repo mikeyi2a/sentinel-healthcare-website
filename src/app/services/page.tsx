@@ -3,22 +3,7 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Button from "@/components/ui/button";
-import Link from "next/link";
-import {
-  Check,
-  ShieldAlert,
-  Activity,
-  Award,
-  GraduationCap,
-  MonitorCheck,
-  ArrowRight,
-  TrendingUp,
-  FileCheck2,
-  Lock,
-  Layers,
-  Sparkles,
-  Users,
-} from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/badge";
 
 export default function ServicesPage() {
@@ -66,7 +51,7 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex">
                 <Badge>
-                  SERVICE LINE 01
+                  SERVICE 01
                 </Badge>
               </div>
 
@@ -82,7 +67,7 @@ export default function ServicesPage() {
             {/* 2-Column Split Layout from Reference Image */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               {/* Left Column: Feature List with Checkmarks & Dividers */}
-              <div className="lg:col-span-6 flex flex-col justify-between h-full">
+              <div className="lg:col-span-12 flex flex-col justify-between h-full">
                 <div className="flex flex-col border-t border-[#DCEAEE]">
                   {/* Feature 1 */}
                   <div className="py-5 border-b border-[#DCEAEE] flex items-start gap-4">
@@ -146,71 +131,11 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Primary Button matching reference bottom left position */}
-                <div className="pt-8">
+                <div className="pt-8 w-fit">
                   <Button href="/contact" variant="primary">
                     <span>Request Advisory</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Column: Large Rounded Frame with Graphic Asset */}
-              <div className="lg:col-span-6">
-                <div className="w-full rounded-[24px] lg:rounded-[36px] bg-tint-1 p-6 lg:p-10 flex flex-col gap-6 border border-[#DCEAEE]">
-                  <div className="flex items-center justify-between border-b border-[#DCEAEE] pb-4">
-                    <div className="flex items-center gap-2">
-                      <ShieldAlert className="w-5 h-5 text-[#FF6F4B]" />
-                      <span className="font-serif text-lg font-medium text-[#0D4655]">
-                        Clinical Risk Register
-                      </span>
-                    </div>
-                    <span className="rounded-[6px] bg-[#E2F0F3] px-2.5 py-1 text-[11px] font-semibold text-[#0D4655]">
-                      Live Audit Spec
-                    </span>
-                  </div>
-
-                  {/* Mock Risk Register Rows */}
-                  <div className="flex flex-col gap-3">
-                    <div className="rounded-[6px] bg-white p-4 flex items-center justify-between text-xs">
-                      <div>
-                        <span className="font-semibold text-[#0D4655]">Medication Administration Protocol</span>
-                        <p className="text-[#4A6570] text-[11px]">Owner: Matron Clinical Quality · High Priority</p>
-                      </div>
-                      <span className="rounded-[6px] bg-[#FF6F4B]/15 text-[#FF6F4B] px-2 py-1 font-semibold">
-                        Score: 16 (High)
-                      </span>
-                    </div>
-
-                    <div className="rounded-[6px] bg-white p-4 flex items-center justify-between text-xs">
-                      <div>
-                        <span className="font-semibold text-[#0D4655]">Surgical Consent & Checklist Audit</span>
-                        <p className="text-[#4A6570] text-[11px]">Owner: Lead Surgeon · CAPA In Progress</p>
-                      </div>
-                      <span className="rounded-[6px] bg-[#1D6B7D]/15 text-[#1D6B7D] px-2 py-1 font-semibold">
-                        Score: 9 (Medium)
-                      </span>
-                    </div>
-
-                    <div className="rounded-[6px] bg-white p-4 flex items-center justify-between text-xs">
-                      <div>
-                        <span className="font-semibold text-[#0D4655]">Patient Handover Shift Log</span>
-                        <p className="text-[#4A6570] text-[11px]">Owner: Nursing Supervisor · Closed Loop</p>
-                      </div>
-                      <span className="rounded-[6px] bg-[#E2F0F3] text-[#0D4655] px-2 py-1 font-semibold">
-                        Score: 4 (Low)
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Outcome Box */}
-                  <div className="mt-2 rounded-[6px] bg-[#0D4655] p-5 text-white flex flex-col gap-1">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#FF6F4B]">
-                      Typical Outcome
-                    </span>
-                    <p className="text-xs text-[#E2F0F3] leading-relaxed">
-                      A reporting system staff are willing to use, a live clinical risk register with named owners, and investigations that find causes rather than culprits.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -229,7 +154,7 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex">
                 <Badge>
-                  SERVICE LINE 02
+                  SERVICE 02
                 </Badge>
               </div>
 
@@ -245,7 +170,7 @@ export default function ServicesPage() {
             {/* 2-Column Split Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               {/* Left Column: Feature List */}
-              <div className="lg:col-span-6 flex flex-col justify-between h-full">
+              <div className="lg:col-span-12 flex flex-col justify-between h-full">
                 <div className="flex flex-col border-t border-[#DCEAEE]">
                   <div className="py-5 border-b border-[#DCEAEE] flex items-start gap-4">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#E2F0F3] text-[#0D4655] flex-shrink-0 mt-0.5">
@@ -304,62 +229,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 w-fit">
                   <Button href="/contact" variant="primary">
                     <span>Request Intelligence Pack</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Column: Illustrative Chart Container matching deck slide 9 */}
-              <div className="lg:col-span-6">
-                <div className="w-full rounded-[24px] lg:rounded-[36px] bg-white p-6 lg:p-10 flex flex-col gap-6 border border-[#DCEAEE]">
-                  <div className="flex items-center justify-between border-b border-[#DCEAEE] pb-4">
-                    <div>
-                      <h3 className="font-serif text-lg font-medium text-[#0D4655]">
-                        As Reporting Rises, Harm Falls
-                      </h3>
-                      <span className="text-[11px] font-semibold text-[#1D6B7D]">
-                        Illustrative pattern only — not client data.
-                      </span>
-                    </div>
-                    <TrendingUp className="w-6 h-6 text-[#FF6F4B]" />
-                  </div>
-
-                  {/* Table/Chart Graphic */}
-                  <div className="flex flex-col gap-3">
-                    <div className="grid grid-cols-3 text-xs font-semibold text-[#0D4655] border-b border-[#DCEAEE] pb-2">
-                      <span>Quarter</span>
-                      <span>Incidents Reported</span>
-                      <span>Harm Events</span>
-                    </div>
-
-                    <div className="grid grid-cols-3 text-xs py-2 border-b border-[#DCEAEE]/60 text-[#4A6570]">
-                      <span className="font-semibold text-[#0D4655]">Q1</span>
-                      <span className="text-[#1D6B7D] font-bold">42</span>
-                      <span className="text-[#FF6F4B] font-bold">14</span>
-                    </div>
-                    <div className="grid grid-cols-3 text-xs py-2 border-b border-[#DCEAEE]/60 text-[#4A6570]">
-                      <span className="font-semibold text-[#0D4655]">Q2</span>
-                      <span className="text-[#1D6B7D] font-bold">78</span>
-                      <span className="text-[#FF6F4B] font-bold">11</span>
-                    </div>
-                    <div className="grid grid-cols-3 text-xs py-2 border-b border-[#DCEAEE]/60 text-[#4A6570]">
-                      <span className="font-semibold text-[#0D4655]">Q3</span>
-                      <span className="text-[#1D6B7D] font-bold">96</span>
-                      <span className="text-[#FF6F4B] font-bold">8</span>
-                    </div>
-                    <div className="grid grid-cols-3 text-xs py-2 text-[#4A6570]">
-                      <span className="font-semibold text-[#0D4655]">Q4</span>
-                      <span className="text-[#1D6B7D] font-bold">118</span>
-                      <span className="text-[#FF6F4B] font-bold">6</span>
-                    </div>
-                  </div>
-
-                  <div className="rounded-[6px] bg-[#E2F0F3] p-4 text-xs font-medium text-[#0D4655] leading-relaxed">
-                    &ldquo;A rising report count with a falling harm count is the signature of a maturing safety culture.&rdquo;
-                  </div>
                 </div>
               </div>
             </div>
@@ -377,7 +251,7 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex">
                 <Badge>
-                  SERVICE LINE 03
+                  SERVICE 03
                 </Badge>
               </div>
 
@@ -391,7 +265,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-6 flex flex-col justify-between h-full">
+              <div className="lg:col-span-12 flex flex-col justify-between h-full">
                 <div className="flex flex-col border-t border-[#DCEAEE]">
                   <div className="py-5 border-b border-[#DCEAEE] flex items-start gap-4">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#E2F0F3] text-[#0D4655] flex-shrink-0 mt-0.5">
@@ -450,23 +324,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 w-fit">
                   <Button href="/contact" variant="primary">
                     <span>Start Baseline Survey</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Column: Stock Image */}
-              <div className="lg:col-span-6">
-                <div className="w-full h-full min-h-[420px] rounded-[24px] lg:rounded-[36px] overflow-hidden border border-[#DCEAEE]">
-                  <img
-                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80"
-                    alt="Accreditation documentation and clinical governance review"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
                 </div>
               </div>
             </div>
@@ -484,7 +346,7 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex">
                 <Badge>
-                  SERVICE LINE 04
+                  SERVICE 04
                 </Badge>
               </div>
 
@@ -579,7 +441,7 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-4">
               <div className="inline-flex">
                 <Badge>
-                  SERVICE LINE 05
+                  SERVICE 05
                 </Badge>
               </div>
 
@@ -593,7 +455,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-6 flex flex-col justify-between h-full">
+              <div className="lg:col-span-12 flex flex-col justify-between h-full">
                 <div className="flex flex-col border-t border-[#DCEAEE]">
                   <div className="py-5 border-b border-[#DCEAEE] flex items-start gap-4">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#E2F0F3] text-[#0D4655] flex-shrink-0 mt-0.5">
@@ -638,31 +500,11 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="pt-8">
+                <div className="pt-8 w-fit">
                   <Button href="/contact" variant="primary">
                     <span>Deploy Digital Tooling</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Column: Key Differentiator Highlight Card */}
-              <div className="lg:col-span-6">
-                <div className="w-full rounded-[24px] lg:rounded-[36px] bg-[#0D4655] text-white p-6 lg:p-10 flex flex-col gap-6">
-                  <div className="flex items-center gap-3">
-                    <MonitorCheck className="w-6 h-6 text-[#FF6F4B]" />
-                    <h3 className="font-serif text-lg font-medium text-white">
-                      Zero License Fee Model
-                    </h3>
-                  </div>
-
-                  <p className="text-sm text-[#E2F0F3] leading-relaxed">
-                    Sentinel does not resell software licenses. We build reporting workflows on BI and mobile tools your institution already owns, eliminating recurring software vendor lock-in.
-                  </p>
-
-                  <div className="rounded-[6px] bg-[#09333E] p-4 text-xs font-semibold text-[#E2F0F3]">
-                    Automated incident tracking and executive dashboards without ongoing license fees.
-                  </div>
                 </div>
               </div>
             </div>

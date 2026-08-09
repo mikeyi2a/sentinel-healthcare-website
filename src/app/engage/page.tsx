@@ -4,7 +4,7 @@ import React from "react";
 import Navbar from "@/components/navbar";
 
 import Button from "@/components/ui/button";
-import { ArrowRight, Clock, ShieldCheck, CheckCircle, FileText, CalendarCheck } from "@phosphor-icons/react";
+import { ArrowRight, Clock, CheckCircle } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
 
 const engagementTiers = [
@@ -181,7 +181,7 @@ export default function EngagePage() {
               </div>
 
               <Button href="/contact" variant="primary" className="flex-shrink-0 relative">
-                <span>Book 45-Min Consultation</span>
+                <span>Book 30-Min Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </div>

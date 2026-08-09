@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import Badge from "@/components/ui/badge";
 import { motion, useReducedMotion } from "framer-motion";
 
+import { usePathname } from "next/navigation";
+
 export interface CtaBandProps {
   eyebrow?: string;
   heading?: string;
@@ -22,7 +24,7 @@ const EASE_EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export const CtaBand: React.FC<CtaBandProps> = ({
   eyebrow = "FREE CONSULTATION",
   heading = "Start with a conversation, not a contract.",
-  subtext = "Tell us what is keeping you up at night. We will spend 45 minutes with you at no cost and tell you honestly whether you need us — and if so, where to start.",
+  subtext = "Tell us what is keeping you up at night. We will spend 30 minutes with you at no cost and tell you honestly whether you need us — and if so, where to start.",
   buttonText = "Start the Conversation",
   buttonHref = "#contact",
   imageSrc = "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
@@ -30,6 +32,11 @@ export const CtaBand: React.FC<CtaBandProps> = ({
   className = "",
 }) => {
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
+
+  if (pathname === "/contact") {
+    return null;
+  }
 
   return (
     <section

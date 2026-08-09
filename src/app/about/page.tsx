@@ -3,19 +3,11 @@
 import React from "react";
 import Navbar from "@/components/navbar";
 import Button from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Handshake, Eye, Medal, CheckCircle, Lock, Scales, Sparkle } from "@phosphor-icons/react";
+import { ArrowRight, ShieldCheck, Handshake, Eye, CheckCircle, Lock, Scales, Sparkle } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
 import { motion, useReducedMotion } from "framer-motion";
 
-const companyFacts = [
-  { label: "Full Legal Name", value: "Sentinel Healthcare Consulting Limited" },
-  { label: "Registration Date", value: "15 July 2026" },
-  { label: "RC Number", value: "9683677" },
-  { label: "Tax ID (TIN)", value: "2622447272211" },
-  { label: "Corporate Structure", value: "Private company limited by shares" },
-  { label: "Share Capital", value: "₦1,000,000" },
-  { label: "Head Office", value: "T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State" },
-];
+
 
 const visionMarkers = [
   {
@@ -132,22 +124,6 @@ export default function AboutPage() {
                 <p className="text-base text-[#4A6570] leading-relaxed">
                   We support hospitals, healthcare providers, government agencies and development partners to establish robust risk management systems that reduce preventable harm, strengthen regulatory compliance and improve the quality of care.
                 </p>
-
-                {/* Company Facts Grid Table */}
-                <div className="mt-2 rounded-[6px] bg-tint-1 p-6">
-                  <h3 className="font-serif text-lg font-medium text-[#0D4655] mb-4">
-                    Corporate Registration Details
-                  </h3>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-                    {companyFacts.map((fact, idx) => (
-                      <div key={idx} className="flex flex-col border-b border-[#DCEAEE] pb-2">
-                        <span className="font-semibold text-[#1D6B7D]">{fact.label}</span>
-                        <span className="text-[#0D4655] font-medium">{fact.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Right Column: "Our Name is Our Method" Callout */}
@@ -183,10 +159,6 @@ export default function AboutPage() {
               <blockquote className="font-serif text-xl sm:text-2xl lg:text-[28px] font-medium text-[#0D4655] leading-snug italic">
                 &ldquo;To make quality healthcare safer and more resilient across Nigeria by helping health institutions anticipate, understand and manage risk — turning everyday data into decisions that protect patients, people and the organisations that serve them.&rdquo;
               </blockquote>
-
-              <p className="text-xs sm:text-sm font-medium text-[#1D6B7D] pl-6 text-balance">
-                Taken from Clause 3(A) of our Memorandum of Association — the objects Sentinel Healthcare Consulting Limited was legally registered to pursue. Our stated mission and legal purpose say the same thing.
-              </p>
             </div>
 
             {/* "What That Means in Practice" 3 Verbs */}

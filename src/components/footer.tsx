@@ -94,7 +94,10 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
             <div className="flex flex-col gap-2 pt-2 text-xs text-white/80">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#FF6F4B] flex-shrink-0 mt-0.5" />
-                <span>T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State</span>
+                <div className="flex flex-col">
+                  <span>T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State</span>
+                  <span className="text-[11px] text-white/60 pt-0.5">RC Number: 9683677</span>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
@@ -148,8 +151,8 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               <p className="font-semibold text-white">
                 Sentinel Healthcare Consulting Limited
               </p>
-              <p>RC Number: 9683677 · TIN: 2622447272211</p>
-              <p>Incorporated 15 July 2026 (CAMA 2020)</p>
+              <p>RC Number: 9683677</p>
+              <p>Incorporated under CAMA 2020</p>
               <p className="text-[11px] text-white/60 pt-3">
                 © 2026 Sentinel Healthcare Consulting Limited. All rights reserved.
               </p>
