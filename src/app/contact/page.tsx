@@ -25,36 +25,28 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setErrorMessage("");
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-
-    // Fallback mode if access key is not set yet
-    if (!accessKey || accessKey === "YOUR_ACCESS_KEY_HERE") {
-      // Simulate submission while letting user know key is pending
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setFormSubmitted(true);
-      }, 800);
-      return;
-    }
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_KEY ||
+      "d136338d-6eba-46a6-a5ca-85a49eaa0de2";
 
     try {
+      const submissionData = new FormData();
+      submissionData.append("access_key", accessKey);
+      submissionData.append("name", formData.name);
+      submissionData.append("email", formData.email);
+      submissionData.append("institution", formData.institution || "Not specified");
+      submissionData.append("phone", formData.phone || "Not specified");
+      submissionData.append("service", formData.service);
+      submissionData.append("message", formData.message);
+      submissionData.append(
+        "subject",
+        `New Consultation Request: ${formData.name} (${formData.institution || "Individual"})`
+      );
+      submissionData.append("from_name", "Sentinel Healthcare Website");
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name: formData.name,
-          email: formData.email,
-          institution: formData.institution,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-          subject: `New Consultation Request: ${formData.name} (${formData.institution})`,
-          from_name: "Sentinel Healthcare Website",
-        }),
+        body: submissionData,
       });
 
       const result = await response.json();
