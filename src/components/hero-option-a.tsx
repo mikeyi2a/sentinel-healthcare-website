@@ -22,8 +22,8 @@ export const HeroOptionA: React.FC<HeroOptionAProps> = ({
   subtext = "Sentinel Healthcare Consulting helps hospitals, HMOs, and development partners master clinical risk, elevate patient safety, and ensure regulatory compliance.",
   primaryCta = "Book Free Consultation",
   secondaryCta = "Explore Services",
-  primaryCtaHref = "#contact",
-  secondaryCtaHref = "#services",
+  primaryCtaHref = "/contact",
+  secondaryCtaHref = "/services",
   socialProofText = "Trusted clinical & risk advisory team in Lagos, Nigeria",
   socialProofAvatars = [
     { name: "Dr. A. Bello", initial: "AB" },

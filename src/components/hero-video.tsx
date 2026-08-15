@@ -38,7 +38,7 @@ export const HeroVideo: React.FC<HeroVideoProps> = ({
   headingLines = ["Safer care,", "by design."],
   subtext = "We help hospitals, HMOs, and development partners master clinical risk, elevate patient safety, and stay ahead of regulation.",
   ctaText = "Book a free consultation",
-  ctaHref = "#contact",
+  ctaHref = "/contact",
   videoSrc,
   videoWebmSrc,
   posterSrc,

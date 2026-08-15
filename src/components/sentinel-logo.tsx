@@ -20,9 +20,9 @@ export const SentinelLogo: React.FC<SentinelLogoProps> = ({
       <img
         src={logoSrc}
         alt={altText}
-        width={1035}
+        width={1173}
         height={340}
-        className="h-10 sm:h-12 lg:h-[50px] w-auto object-contain transition-all"
+        className="h-11 sm:h-12 lg:h-[52px] w-auto object-contain transition-all"
       />
     </Link>
   );

@@ -91,7 +91,16 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
               Safer care, by design. Providing hospitals, insurers, and health institutions with clinical risk management and governance solutions.
             </p>
 
-            <div className="flex flex-col gap-2 pt-2 text-xs text-white/80">
+            <div className="flex items-center justify-between">
+              <Link
+                href="/contact"
+                className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#FF6F4B] hover:text-white transition-colors"
+              >
+                Contact Us & Details →
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-2 pt-1 text-xs text-white/80">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#FF6F4B] flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
