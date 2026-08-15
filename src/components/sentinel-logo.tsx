@@ -11,7 +11,9 @@ export const SentinelLogo: React.FC<SentinelLogoProps> = ({
   className = "",
 }) => {
   const isLight = variant === "light";
-  const logoSrc = isLight ? "/sentinel-logo-white.png" : "/sentinel-logo-default.png";
+  const logoSrc = isLight
+    ? "/sentinel-logo-white-new.png"
+    : "/sentinel-logo-default-new.png";
   const altText = "Sentinel Healthcare Consulting";
 
   return (
@@ -22,7 +24,7 @@ export const SentinelLogo: React.FC<SentinelLogoProps> = ({
         alt={altText}
         width={1173}
         height={340}
-        className="h-11 sm:h-12 lg:h-[52px] w-auto object-contain transition-all"
+        className="h-12 sm:h-14 lg:h-[54px] w-auto object-contain transition-all"
       />
     </Link>
   );
