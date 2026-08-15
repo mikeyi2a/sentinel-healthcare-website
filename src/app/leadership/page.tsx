@@ -11,7 +11,6 @@ interface Director {
   name: string;
   qualifications: string;
   title: string;
-  shareholding: string;
   focus: string;
   image: string | null;
   bioParagraphs: string[] | null;
@@ -22,7 +21,6 @@ const directors: Director[] = [
     name: "Dr. Bibian Nwanyioma Ofoegbu",
     qualifications: "MBBS, MRCPCH, FRCPCH, MSc",
     title: "Founder & Managing Director",
-    shareholding: "Majority Shareholder (800,000 ordinary shares)",
     focus: "Clinical Governance, Pediatrics, Patient Safety Systems & Quality Improvement",
     image: "/dr-bibian-ofoegbu.png",
     bioParagraphs: [
@@ -36,7 +34,6 @@ const directors: Director[] = [
     name: "Dr. Hadrian Onuegbu Ofoegbu",
     qualifications: "MBBS, FRCPGP",
     title: "Director",
-    shareholding: "Shareholder (200,000 ordinary shares)",
     focus: "Clinical Medicine, Health Systems Management & Operational Risk Control",
     image: null,
     bioParagraphs: null
@@ -169,13 +166,6 @@ export default function LeadershipPage() {
                             {dir.title}
                           </span>
                           <span className="text-xs text-[#4A6570]">{dir.qualifications}</span>
-                        </div>
-
-                        <div className="flex flex-col gap-1 pt-1">
-                          <span className="text-[11px] font-semibold uppercase tracking-[0.11em] text-[#0D4655]">
-                            Shareholding
-                          </span>
-                          <span className="text-xs text-[#4A6570]">{dir.shareholding}</span>
                         </div>
 
                         <div className="flex flex-col gap-1 pt-1">
