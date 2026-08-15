@@ -57,8 +57,7 @@ const defaultServices: ServiceItem[] = [
     icon: <GraduationCap className="w-6 h-6" />,
     title: "Training & Capacity Building",
     description: "Building the skills and safety culture that make the system stick.",
-    image:
-      "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/training-capacity-building.jpg",
     slug: "training-capacity-building",
   },
   {

@@ -64,7 +64,7 @@ export default function EngagePage() {
           <div
             className="absolute inset-0 z-0 bg-cover bg-right lg:bg-center"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=2000&q=80')`,
+              backgroundImage: `url('/images/training-capacity-building.jpg')`,
             }}
           />
           {/* Gradient Overlay: 100% #0D4655 on left, fading to transparent on right */}
