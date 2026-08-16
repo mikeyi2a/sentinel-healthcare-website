@@ -32,11 +32,15 @@ const directors: Director[] = [
   },
   {
     name: "Dr. Hadrian Onuegbu Ofoegbu",
-    qualifications: "MBBS, FRCPGP",
-    title: "Director",
-    focus: "Clinical Medicine, Health Systems Management & Operational Risk Control",
-    image: null,
-    bioParagraphs: null
+    qualifications: "MBBS, FRCGP",
+    title: "Director & GP Partner (NHS Scotland)",
+    focus: "General Practice, Chronic Disease Management & Palliative Care",
+    image: "/dr-hadrian-ofoegbu.png",
+    bioParagraphs: [
+      "Dr Hadrian Ofoegbu is an experienced General Practitioner and GP Partner with NHS Scotland, with 20 years of clinical practice in General Practice.",
+      "Specializing in chronic disease management and palliative care, Dr Ofoegbu brings deep expertise in proactive patient care, long-term condition management, and holistic treatment pathways.",
+      "As a Director at Sentinel Healthcare Consulting, he provides strategic leadership in clinical governance, primary care risk management, and healthcare quality assurance across institutions."
+    ]
   },
 ];
 
