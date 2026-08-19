@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/button";
 import SentinelLogo from "@/components/sentinel-logo";
+import { LinkedinLogo, FacebookLogo } from "@phosphor-icons/react";
 
 export interface NavLink {
   label: string;
@@ -132,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </Link>
             ))}
           </nav>
-          <div className="pt-2 border-t border-[#DCEAEE]">
+          <div className="pt-2 border-t border-[#DCEAEE] flex flex-col gap-3">
             <Button
               href={primaryCtaHref}
               variant="primary"
@@ -141,6 +142,28 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               {primaryCtaText}
             </Button>
+
+            <div className="flex items-center justify-center gap-3 pt-1">
+              <span className="font-semibold uppercase tracking-wider text-[10px] text-[#1D6B7D]">Follow Us:</span>
+              <a
+                href="https://www.linkedin.com/company/sentinel-healthcare-consulting-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sentinel LinkedIn Page"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E2F0F3] text-[#0D4655] hover:bg-[#0077B5] hover:text-white transition-colors"
+              >
+                <LinkedinLogo className="w-3.5 h-3.5" weight="fill" />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61593096647779"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sentinel Facebook Page"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E2F0F3] text-[#0D4655] hover:bg-[#1877F2] hover:text-white transition-colors"
+              >
+                <FacebookLogo className="w-3.5 h-3.5" weight="fill" />
+              </a>
+            </div>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Navbar from "@/components/navbar";
 
 import Button from "@/components/ui/button";
-import { Envelope, Phone, MapPin, CheckCircle, PaperPlaneTilt } from "@phosphor-icons/react";
+import { Envelope, Phone, MapPin, CheckCircle, PaperPlaneTilt, LinkedinLogo, FacebookLogo, ShareNetwork } from "@phosphor-icons/react";
 import Badge from "@/components/ui/badge";
 
 export default function ContactPage() {
@@ -142,6 +142,36 @@ export default function ContactPage() {
                     <div>
                       <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Head Office Location</span>
                       <p className="text-sm font-medium text-[#0D4655]">T6-10D CoopEast Beach Resort Estate, Platinum Way, Lekki, Lagos State</p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-[6px] bg-white p-5 flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[6px] bg-[#E2F0F3] text-[#0D4655] flex-shrink-0">
+                      <ShareNetwork className="w-5 h-5 text-[#FF6F4B]" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs font-semibold uppercase text-[#1D6B7D]">Social Channels</span>
+                      <div className="flex items-center gap-4 pt-0.5">
+                        <a
+                          href="https://www.linkedin.com/company/sentinel-healthcare-consulting-limited/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0D4655] hover:text-[#0077B5] transition-colors"
+                        >
+                          <LinkedinLogo className="w-4 h-4 text-[#0077B5]" weight="fill" />
+                          <span>LinkedIn</span>
+                        </a>
+                        <span className="text-gray-300">•</span>
+                        <a
+                          href="https://www.facebook.com/profile.php?id=61593096647779"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0D4655] hover:text-[#1877F2] transition-colors"
+                        >
+                          <FacebookLogo className="w-4 h-4 text-[#1877F2]" weight="fill" />
+                          <span>Facebook</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
 

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useReducedMotion } from "framer-motion";
-import { Envelope, Phone, MapPin, Globe, ArrowUp } from "@phosphor-icons/react";
+import { Envelope, Phone, MapPin, Globe, ArrowUp, LinkedinLogo, FacebookLogo } from "@phosphor-icons/react";
 
 const MeshGradient = dynamic(
   () => import("@paper-design/shaders-react").then((mod) => mod.MeshGradient),
@@ -120,6 +120,31 @@ export const Footer: React.FC<FooterProps> = ({ className = "" }) => {
                 <Globe className="w-4 h-4 text-[#FF6F4B] flex-shrink-0" />
                 <a href="https://www.sentinelhcl.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.sentinelhcl.com</a>
               </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-2.5 pt-1">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60 mr-1">
+                Follow Us:
+              </span>
+              <a
+                href="https://www.linkedin.com/company/sentinel-healthcare-consulting-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sentinel LinkedIn Page"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#0077B5] hover:text-white transition-all shadow-sm"
+              >
+                <LinkedinLogo className="w-3.5 h-3.5" weight="fill" />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61593096647779"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sentinel Facebook Page"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#1877F2] hover:text-white transition-all shadow-sm"
+              >
+                <FacebookLogo className="w-3.5 h-3.5" weight="fill" />
+              </a>
             </div>
           </div>
 
