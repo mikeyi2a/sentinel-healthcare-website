@@ -86,24 +86,24 @@ export default function EngagePage() {
         </section>
 
         {/* 3 Tiers Grid Section */}
-        <section className="w-full py-28 lg:py-36 bg-tint-1">
+        <section className="w-full py-28 lg:py-36 bg-gradient-to-b from-[#F4F9FB] via-white to-[#F4F9FB]">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-12 flex flex-col gap-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
               {engagementTiers.map((tier, idx) => {
                 const dark = tier.highlight;
                 return (
                 <div
                   key={idx}
-                  className={`rounded-[6px] p-8 flex flex-col justify-between gap-8 border transition-colors ${
+                  className={`rounded-[8px] p-8 sm:p-9 flex flex-col justify-between gap-8 border transition-all duration-300 ${
                     dark
-                      ? "bg-[#0D4655] text-white border-[#0D4655] relative"
-                      : "bg-white text-[#0D4655] border-[#DCEAEE]"
+                      ? "bg-gradient-to-b from-[#0D4655] to-[#08303B] text-white border-[#FF6F4B]/40 shadow-[0_16px_48px_rgba(13,70,85,0.2)] md:-translate-y-2 relative z-10"
+                      : "bg-gradient-to-b from-[#FFFFFF] to-[#F8FBFC] text-[#0D4655] border-[#DCEAEE] shadow-[0_4px_24px_-4px_rgba(13,70,85,0.06)] hover:shadow-[0_12px_32px_-4px_rgba(13,70,85,0.12)] hover:border-[#1D6B7D]/50"
                   }`}
                 >
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-5">
                     <div className="flex items-center justify-between">
                       <span className={`rounded-[6px] px-3 py-1 text-[11px] font-semibold tracking-wider uppercase ${
-                        dark ? "bg-[#E2F0F3]/20 text-[#E2F0F3]" : "bg-[#E2F0F3] text-[#0D4655]"
+                        dark ? "bg-[#FF6F4B] text-white" : "bg-[#E2F0F3] text-[#0D4655]"
                       }`}>
                         {tier.badge}
                       </span>
@@ -115,7 +115,7 @@ export default function EngagePage() {
                       </div>
                     </div>
 
-                    <h2 className={`font-serif text-2xl font-medium mt-2 ${
+                    <h2 className={`font-serif text-2xl sm:text-3xl font-medium mt-1 ${
                       dark ? "text-white" : "text-[#0D4655]"
                     }`}>
                       {tier.title}
@@ -128,7 +128,7 @@ export default function EngagePage() {
                     </p>
 
                     {/* Points list */}
-                    <div className="pt-2 flex flex-col gap-3">
+                    <div className="pt-3 flex flex-col gap-3.5 border-t border-current/10">
                       {tier.points.map((pt, pIdx) => (
                         <div key={pIdx} className="flex items-start gap-2.5">
                           <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
@@ -144,10 +144,10 @@ export default function EngagePage() {
                     </div>
                   </div>
 
-                  <div className={`pt-4 border-t ${
+                  <div className={`pt-6 border-t ${
                     dark ? "border-white/15" : "border-[#DCEAEE]"
                   }`}>
-                    <Button href="/contact" variant={dark ? "primary" : "secondary"} className="w-full">
+                    <Button href="/contact" variant={dark ? "white" : "primary"} className="w-full">
                       <span>{tier.ctaText}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -158,7 +158,7 @@ export default function EngagePage() {
             </div>
 
             {/* Scoped Pricing Notice */}
-            <div className="relative overflow-hidden rounded-[6px] bg-[#FFFFFF] p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="relative overflow-hidden rounded-[8px] bg-gradient-to-r from-white to-[#F8FBFC] p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#DCEAEE] shadow-sm">
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
