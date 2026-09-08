@@ -35,7 +35,7 @@ const directors: Director[] = [
     qualifications: "MBBS, FRCGP",
     title: "Director & GP Partner (NHS Scotland)",
     focus: "General Practice, Chronic Disease Management & Palliative Care",
-    image: "/dr-hadrian-ofoegbu.png",
+    image: "/dr-hadrian-ofoegbu.jpg",
     bioParagraphs: [
       "Dr Hadrian Ofoegbu is an experienced General Practitioner and GP Partner with NHS Scotland, with 20 years of clinical practice in General Practice.",
       "Specializing in chronic disease management and palliative care, Dr Ofoegbu brings deep expertise in proactive patient care, long-term condition management, and holistic treatment pathways.",
